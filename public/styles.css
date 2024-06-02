@@ -1,0 +1,59 @@
+/* CSS file */ 
+@font-face {
+    font-family: 'Product Sans';
+    src: url('tools\fonts\product_sans\Product Sans Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Product Sans';
+    src: url('tools\fonts\product_sans\Product Sans Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Product Sans';
+    src: url('tools\fonts\product_sans\Product Sans Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Product Sans';
+    src: url('tools\fonts\product_sans\Product Sans Bold Italic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+body {
+    font-family: 'Product Sans', Arial, sans-serif; /* Product Sans is the primary font now */
+    background-color: #ffffff; /* White background */
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    color: #0066cc;
+    border-bottom: 2px solid #E0E0E0; /* Light gray border under the header */
+    font-weight: bold; /* Makes the header bold */
+}
+
+p {
+    margin: 20px 0;
+}
+
+ital {
+    font-style: italic;
+}
+
+bold {
+    font-weight: bold; 
+}
+
+ital_bold {
+    font-weight: bold;
+    font-style: italic; 
+}
