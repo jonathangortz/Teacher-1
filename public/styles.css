@@ -29,17 +29,111 @@
 
 body {
     font-family: 'Product Sans', Arial, sans-serif; /* Product Sans is the primary font now */
-    background-color: #ffffff; /* White background */
+    background-color: #FFFFFF; /* White background */
     margin: 0;
-    padding: 20px;
+    padding: 0px;
     color: #333;
 }
 
-h1 {
-    color: #0066cc;
-    border-bottom: 10px solid #E0E0E0; /* Light gray border under the header */
-    font-weight: bold; /* Makes the header bold */
+.hamburger-menu {
+    padding: 12px;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    display: inline-block; /* Makes the div inline to take only as much space as needed */
+    cursor: pointer; /* Changes the cursor to a pointer when hovering over the menu */
+    border-radius: 50%; /* Makes the background circle */
+    background-color: white; /* Initial background color */
 }
+
+.hamburger-menu:hover {
+    background-color: #F0F0F0; /* Changes to gray when hovered */
+}
+
+.hamburger-menu span {
+    display: block; /* Makes each span a block element */
+    height: 2px; /* Height of each line */
+    width: 18px; /* Width of each line */
+    background-color: #5F6368; /* Color of each line */
+    margin: 3px 0; /* Space between the lines */
+    transition: all 0.3s ease; /* Smooth transition for hover effects or click effects */
+}
+
+.top-border {
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.dot-container {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 2px); /* 3 columns, each dot is 2px */
+    grid-template-rows: repeat(3, 2px); /* 3 rows, each dot is 2px */
+    gap: 4px; /* Spacing between dots */
+    width: max-content;
+    right: 67px;
+    top: 9px;
+    padding: 15px; /* Adds padding around the dots */
+    border-radius: 50%; /* Makes the background circle */
+    background-color: white; /* Initial background color */
+}
+
+.dot-container:hover {
+    background-color: #F0F0F0; /* Changes to gray when hovered */
+}
+
+.dot {
+    width: 4px;
+    height: 4px;
+    background-color: #5F6368;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2; /* Ensures dots are above the background */
+}
+
+#whiteBox {
+    position: absolute;
+    display: block; /* Changed from 'none' to 'block' to start visible */
+    width: 330px;
+    height: 450px;
+    background-color: #F8FAFD;
+    top: 63px;
+    right: 15px;
+    border: 10px solid #E9EEF6;
+    border-radius: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow */
+}
+
+.item {
+    width: 90px; /* Adjust based on desired size */
+    height: 100px; /* Adjust based on desired size */
+    margin-bottom: 10px; /* Space between rows */
+    text-align: center; /* Center text under the image */
+    position: relative;
+    box-sizing: border-box;
+}
+
+.item img {
+    width: 100%; /* Make image fill the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners for images */
+}
+
+.item p {
+    margin-top: 5px; /* Space between image and text */
+}
+
+.item:hover {
+    background-color: #E0E0E0; /* Gray background on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    border-radius: 5px; /* Slightly rounded corners for the hover effect */
+}
+
 
 p {
     margin: 20px 0;
