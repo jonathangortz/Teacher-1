@@ -92,9 +92,8 @@ body {
 
 #whiteBox {
     position: absolute;
-    display: block; /* Changed from 'none' to 'block' to start visible */
     width: 330px;
-    height: 450px;
+    height: 270px;
     background-color: #F8FAFD;
     top: 63px;
     right: 15px;
@@ -104,50 +103,120 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow */
+    justify-content: flex-start; /* Align items to the left */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    display: none; /* Ensure this is intended or controlled by JavaScript */
 }
 
 .item {
-    width: 90px; /* Adjust based on desired size */
-    height: 100px; /* Adjust based on desired size */
+    width: 90px; /* Adjust based on container size and total number of items */
+    height: 100px;
+    margin-right: 0px; /* Horizontal space between items */
     margin-bottom: 10px; /* Space between rows */
-    text-align: center; /* Center text under the image */
+    text-align: center;
     position: relative;
-    box-sizing: border-box;
 }
 
 .item img {
-    width: 100%; /* Make image fill the container */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Optional: Rounded corners for images */
+    width: 42%; /* Adjust if necessary */
+    height: auto;
+    padding: 20px;
 }
 
 .item p {
-    margin-top: 5px; /* Space between image and text */
+    margin-top: 0px;
+}
+
+.item a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
 }
 
 .item:hover {
-    background-color: #E0E0E0; /* Gray background on hover */
-    transition: background-color 0.3s ease; /* Smooth transition */
-    border-radius: 5px; /* Slightly rounded corners for the hover effect */
+    background-color: #E9EEF6;
+    border-radius: 20px;
+}
+
+.title {
+    text-align: center;
+    position: absolute;
+    font-size: 23px;
+
+    top: 20px;
+    left: 105px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 66px;
+    left: 0;
+    width: 80px; /* Default, collapsed width */
+    height: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    padding: 10px 0;
+    box-sizing: border-box;
+    overflow: hidden; /* Ensures nothing overflows the sidebar dimensions */
+    transition: width 0.3s ease; /* Smooth transition for width */
+}
+
+.sidebar.expanded {
+    width: 250px; /* Expanded width */
+}
+
+.icon img {
+    padding: 5px;
+    padding-left: 20px;
+    flex-shrink: 0; /* Prevents the icon from shrinking */
+    width: 30px; /* Consistent width for icons */
+    height: 30px; /* Consistent height for icons */
+    margin-right: 10px; /* Space between the icon and the text */
 }
 
 
-p {
-    margin: 20px 0;
-}
 
-ital {
-    font-style: italic;
-}
-
-bold {
-    font-weight: bold; 
-}
-
-ital_bold {
+.text {
+    flex-grow: 1; /* Allows text to expand and fill available space */
+    overflow: hidden; /* Hides text that overflows the element bounds */
+    white-space: nowrap; /* Keeps text on a single line */
+    max-width: 0; /* Start with no width to hide the text initially */
+    opacity: 0; /* Text starts out fully transparent */
+    transition: max-width 0.3s ease, opacity 0.3s ease; /* Controls the animation speed and easing */
+    position: absolute; /* Absolute positioning to align text properly */
+    left: 80px; /* Positioning the text next to the icon */
+    right: 0; /* Ensuring text stretches to the end of the sidebar */
     font-weight: bold;
-    font-style: italic; 
+    font-size: 14px;
+    color: #5F6368;
+}
+
+.sidebar.expanded .text {
+    max-width: 200px; /* Enough width to show full text when sidebar is expanded */
+    opacity: 1; /* Full opacity when sidebar is expanded */
+    transition: max-width 0.3s ease 0.3s, opacity 0.3s, 0.3s; /* Delays the expansion of the text */
+}
+
+.icon {
+    display: flex; /* Ensures items are aligned horizontally */
+    align-items: center; /* Centers items vertically within each icon link */
+    margin: 20px 0; /* Provides spacing around each icon */
+    position: relative; /* Relative positioning for absolute child elements */
+    overflow: hidden; /* Prevents any child elements from overflowing */
+    margin-right: 10px;
+}
+
+.icon:hover, .icon:active {
+    background-color: #F6F6F6;  /* Light blue background on hover/active */
+    border-radius: 0 25px 25px 0;
+}
+
+/* You may also want to adjust icon sizing or spacing here */
+.icon img.expanded {
+    width: 80%; /* Larger icons when expanded */
+}
+
+.sidebar.expanded .icon img {
+    width: 80%; /* Larger icon size when sidebar is expanded */
 }
