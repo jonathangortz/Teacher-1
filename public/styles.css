@@ -1,4 +1,6 @@
-/* CSS file */ 
+/* CSS file */
+
+/* ALL FONTS */  
 @font-face {
     font-family: 'Product Sans';
     src: url('tools\fonts\product_sans\Product Sans Regular.ttf') format('truetype');
@@ -26,6 +28,14 @@
     font-weight: bold;
     font-style: italic;
 }
+
+
+
+
+
+
+
+/* MAIN PAGE INCLUDING TOP BAR AND SIDEBAR*/
 
 body {
     font-family: 'Product Sans', Arial, sans-serif; /* Product Sans is the primary font now */
@@ -106,6 +116,7 @@ body {
     justify-content: flex-start; /* Align items to the left */
     box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     display: none; /* Ensure this is intended or controlled by JavaScript */
+    z-index: 9999;
 }
 
 .item {
@@ -160,6 +171,7 @@ body {
     box-sizing: border-box;
     overflow: hidden; /* Ensures nothing overflows the sidebar dimensions */
     transition: width 0.3s ease; /* Smooth transition for width */
+    z-index: 9998; /* Make sure this is on top of anything else */
 }
 
 .sidebar.expanded {
@@ -219,4 +231,79 @@ body {
 
 .sidebar.expanded .icon img {
     width: 80%; /* Larger icon size when sidebar is expanded */
+}
+
+
+
+
+
+
+/* POST STYLING */
+
+.post {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    margin-top: 40px;
+    padding: 20px;
+    height: auto;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.post-header {
+    display: flex;
+
+    width: 100%;
+    padding-left: 20px;
+}
+
+
+.post-title {
+    font-size: 30px;
+    font-weight: bold;
+    align-self: center;
+}
+.post-header img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    float: left; /* Add this line to float the image to the left */
+}
+
+.post-author {
+    font-size: 16px;
+    font-weight: bold;
+    color: #5F6368;
+    margin: 0;
+    float: left; /* Add this line to float the author text to the left */
+}
+.post-content {
+    font-size: 16px;
+    color: #5F6368;
+    margin: 0;
+    align-self: left;
+    padding-top: 20px;
+}
+
+.post-footer li {
+    margin: 20px 0;
+}
+
+.post-footer a {
+    color: #5F6368;
+    font-size: 16px;
+    margin-right: 10%;
+    text-decoration: none; /* Remove default underline */
+}
+
+.post-footer a:hover {
+    text-decoration: underline; /* Underline on hover */
 }
